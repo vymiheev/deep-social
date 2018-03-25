@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class AbstractYtBulkParser {
+public abstract class AbstractYtBulkParser implements IYtBulkParser{
     protected final static int MAX_THREADS = 10;
     protected final static int MIN_THREADS = 2;
     private static final Logger logger = Logger.getLogger(AbstractYtBulkParser.class);

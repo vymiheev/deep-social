@@ -1,6 +1,7 @@
 package com.ecpi.youtube;
 
 import com.ecpi.youtube.model.CountryChannelTotal;
+import com.ecpi.youtube.parser.IYtBulkParser;
 import com.ecpi.youtube.parser.jsoup.YtBulkParser;
 import com.ecpi.youtube.util.JSONBuilder;
 import com.ecpi.youtube.util.ResLoader;
@@ -13,7 +14,7 @@ import java.util.List;
 public class EntryPoint {
     private static final Logger logger = Logger.getLogger(EntryPoint.class);
     //inject proper parser
-    private YtBulkParser jSoupParser = new YtBulkParser();
+    private IYtBulkParser jSoupParser = new YtBulkParser();
 
     public static void main(String[] args) {
        /* if (ArrayUtils.isEmpty(args)) {
