@@ -23,3 +23,10 @@ https://www.youtube.com/channel/UCxSv7WIOXbyDAvw2US1LSlg/about
 вас - CSV, JSON, html таблица или любой другой.
 4. Плюсом будет реализация параллельной обработки разных страниц в разных
 потоках (например, в 8 потоков).
+
+
+
+Для Запуска
+cd youtube
+gradle run
+список ИД ютуб каналов находится в files/yt-ch.txt
