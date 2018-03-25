@@ -1,8 +1,8 @@
 group 'ecpi'
 version '1.0-SNAPSHOT'
-
+apply plugin: 'application'
 apply plugin: 'java'
-
+mainClassName = 'com.ecpi.youtube.EntryPoint'
 sourceCompatibility = 1.8
 
 repositories {

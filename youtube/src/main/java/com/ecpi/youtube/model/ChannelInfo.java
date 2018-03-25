@@ -12,12 +12,12 @@ public class ChannelInfo {
         return country;
     }
 
-    public void setCountry(JustCountry country) {
-        this.country = country;
-    }
-
     public void setCountry(String name) {
         this.country = new JustCountry(name);
+    }
+
+    public void setCountry(JustCountry country) {
+        this.country = country;
     }
 
     public Long getSubscribers() {

@@ -1,7 +1,6 @@
 package com.ecpi.youtube.parser;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 public class ValueObject<T> implements Serializable {
     private T value;

@@ -3,6 +3,7 @@ package com.ecpi.youtube.util;
 import com.ecpi.youtube.ex.ConfigurationRuntimeException;
 import org.apache.log4j.Logger;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -23,8 +24,9 @@ public class ResLoader {
     }
 
     public static List<String> readAll(String txt) {
+        File file = new File(txt);
         try {
-            return Files.readAllLines(Paths.get(txt));
+            return Files.readAllLines(Paths.get(file.getAbsolutePath()));
         } catch (IOException e) {
             logger.error(e.getMessage(), e);
             throw new ConfigurationRuntimeException(e);

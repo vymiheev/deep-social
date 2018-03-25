@@ -1,12 +1,10 @@
 package com.ecpi.youtube;
 
-import com.ecpi.youtube.ex.ConfigurationRuntimeException;
 import com.ecpi.youtube.model.CountryChannelTotal;
 import com.ecpi.youtube.parser.jsoup.YtBulkParser;
 import com.ecpi.youtube.util.JSONBuilder;
 import com.ecpi.youtube.util.ResLoader;
 import com.ecpi.youtube.util.YtChannelAbout;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.log4j.Logger;
 
 import java.util.Collection;
@@ -18,15 +16,14 @@ public class EntryPoint {
     private YtBulkParser jSoupParser = new YtBulkParser();
 
     public static void main(String[] args) {
-        if (ArrayUtils.isEmpty(args)) {
+       /* if (ArrayUtils.isEmpty(args)) {
             throw new ConfigurationRuntimeException("Empty params!");
         }
         if (args.length > 1) {
             throw new ConfigurationRuntimeException("Too much params!");
         }
-        String filepath = args[0];
-
-        new EntryPoint().launch(filepath);
+        String filepath = args[0];*/
+        new EntryPoint().launch("files/yt-ch.txt");
     }
 
     private void launch(String filepath) {
