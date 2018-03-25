@@ -1,0 +1,22 @@
+group 'ecpi'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+project.ext {
+    test = ['junit:junit:4.12:', 'org.mockito:mockito-all:1.9.5:']
+    logs = ['log4j:log4j:1.2.17']
+    commons = ['org.apache.commons:commons-lang3:3.2.1', 'commons-collections:commons-collections:3.2.1',
+               'commons-io:commons-io:2.4:']
+}
+
+dependencies {
+    compile project.logs, project.commons, project.test
+    //compile group: 'com.google.guava', name: 'guava', version: '24.1-jre'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.8.1'
+}
