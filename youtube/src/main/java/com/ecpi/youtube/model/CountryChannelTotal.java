@@ -4,9 +4,18 @@ public class CountryChannelTotal implements Comparable<CountryChannelTotal> {
     private JustCountry justCountry;
     private Long subscribersTotal = 0L;
     private Long channelsTotal = 0L;
+    private Long viewsTotal = 0L;
 
     public JustCountry getJustCountry() {
         return justCountry;
+    }
+
+    public Long getViewsTotal() {
+        return viewsTotal;
+    }
+
+    public void setViewsTotal(Long viewsTotal) {
+        this.viewsTotal = viewsTotal;
     }
 
     public void setJustCountry(JustCountry justCountry) {
@@ -40,5 +49,9 @@ public class CountryChannelTotal implements Comparable<CountryChannelTotal> {
     @Override
     public int compareTo(CountryChannelTotal o) {
         return o.subscribersTotal.compareTo(this.subscribersTotal);
+    }
+
+    public void plusViews(Long views) {
+        viewsTotal += views;
     }
 }

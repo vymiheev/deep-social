@@ -6,8 +6,8 @@ public class YtChannelAbout {
     private String channelId;
     private String aboutURL;
 
-    public static ReplcaingBuilder newReplacingBuilder() {
-        return new YtChannelAbout().new ReplcaingBuilder();
+    public static ReplacingBuilder newReplacingBuilder() {
+        return new YtChannelAbout().new ReplacingBuilder();
     }
 
     public String getChannelId() {
@@ -26,14 +26,14 @@ public class YtChannelAbout {
         this.aboutURL = aboutURL;
     }
 
-    class ReplcaingBuilder {
+    class ReplacingBuilder {
 
         private final String channelAboutURLPattern = "https://www.youtube.com/channel/%s/about";
 
-        private ReplcaingBuilder() {
+        private ReplacingBuilder() {
         }
 
-        public ReplcaingBuilder setChannelId(String channelId) {
+        public ReplacingBuilder setChannelId(String channelId) {
             YtChannelAbout.this.setChannelId(channelId);
             return this;
         }

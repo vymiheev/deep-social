@@ -32,13 +32,12 @@ public class YtDescriptor {
         ValueObject<Long> subscribers = PageResolver.resolveSubscribers(doc);
         ValueObject<Long> views = PageResolver.resolveViews(doc);
 
-        ChannelInfo channelInfo = new ChannelInfo() {{
+        return new ChannelInfo() {{
             setChannelID(ytChannel.getChannelId());
             setCountry(country.getValue());
             setSubscribers(subscribers.getValue());
             setViews(views.getValue());
         }};
-        return channelInfo;
 
     }
 }

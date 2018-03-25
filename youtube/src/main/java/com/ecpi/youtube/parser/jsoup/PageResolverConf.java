@@ -1,14 +1,14 @@
 package com.ecpi.youtube.parser.jsoup;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class PageResolverConf {
     public static final String COUNTRY_PATTERN = "COUNTRY_CSS_PATTERN";
     public static final String STATS_PATTERN = "STATS_CSS_PATTERN";
     public static final String SUBSCRIBERS_STATS_PATTERN = "SUBSCRIBERS_STATS_CSS_PATTERN";
     public static final String VIEWS_STATS_PATTERN = "VIEWS_STATS_CSS_PATTERN";
-    private static Map<String, SearchPattern> patternMap = new ConcurrentHashMap<>();
+    private static Map<String, SearchPattern> patternMap = new HashMap<>();
 
     public static void addPattern(SearchPattern pattern) {
         patternMap.put(pattern.getName(), pattern);

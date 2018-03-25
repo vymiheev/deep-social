@@ -14,7 +14,6 @@ import java.util.Map;
 public abstract class AbstractYtBulkParser {
     protected final static int MAX_THREADS = 10;
     protected final static int MIN_THREADS = 2;
-    protected final static int AWAIT_MINUTES = 5;
     private static final Logger logger = Logger.getLogger(AbstractYtBulkParser.class);
 
     protected int checkThreadsCount(int threadCount) {
@@ -38,18 +37,19 @@ public abstract class AbstractYtBulkParser {
     protected Map<JustCountry, CountryChannelTotal> transform(List<ChannelInfo> channelInfos) {
         Map<JustCountry, CountryChannelTotal> countryChannelTotals = new HashMap<>();
         channelInfos.forEach(channelInfo -> {
+            CountryChannelTotal channelTotal;
             if (countryChannelTotals.containsKey(channelInfo.getCountry())) {
-                CountryChannelTotal channelTotal = countryChannelTotals.get(channelInfo.getCountry());
-                channelTotal.plusSubscribers(channelInfo.getSubscribers());
-                channelTotal.incrementChannels();
+                channelTotal = countryChannelTotals.get(channelInfo.getCountry());
             } else {
-                CountryChannelTotal channelTotal = new CountryChannelTotal();
+                channelTotal = new CountryChannelTotal();
                 channelTotal.setJustCountry(channelInfo.getCountry());
-                channelTotal.incrementChannels();
-                channelTotal.plusSubscribers(channelInfo.getSubscribers());
                 countryChannelTotals.put(channelInfo.getCountry(), channelTotal);
             }
+            channelTotal.plusSubscribers(channelInfo.getSubscribers());
+            channelTotal.incrementChannels();
+            channelTotal.plusViews(channelInfo.getViews());
         });
         return countryChannelTotals;
     }
+
 }

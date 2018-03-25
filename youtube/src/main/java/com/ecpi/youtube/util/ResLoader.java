@@ -16,14 +16,14 @@ public class ResLoader {
     public static List<YtChannelAbout> buildChannels(String txt) {
         List<String> channelIds = readAll(txt);
         List<YtChannelAbout> channelAbouts = new ArrayList<>();
-        channelIds.stream().forEach(s -> {
-            YtChannelAbout.ReplcaingBuilder replacingBuilder = YtChannelAbout.newReplacingBuilder();
+        channelIds.forEach(s -> {
+            YtChannelAbout.ReplacingBuilder replacingBuilder = YtChannelAbout.newReplacingBuilder();
             channelAbouts.add(replacingBuilder.setChannelId(s).build());
         });
         return channelAbouts;
     }
 
-    public static List<String> readAll(String txt) {
+    private static List<String> readAll(String txt) {
         File file = new File(txt);
         try {
             return Files.readAllLines(Paths.get(file.getAbsolutePath()));

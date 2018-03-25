@@ -46,7 +46,7 @@ public class YtBulkParser extends AbstractYtBulkParser {
     }
 
     private Callable<ChannelInfo> constructCallable(YtChannelAbout ytCh, List<ChannelInfo> channelInfos) {
-        Callable<ChannelInfo> infoCallable = () -> {
+        return () -> {
             YtDescriptor ytDescriptor = new YtDescriptor(ytCh);
             try {
                 ChannelInfo channelInfo = ytDescriptor.resolve();
@@ -59,7 +59,6 @@ public class YtBulkParser extends AbstractYtBulkParser {
                 throw new YoutubeDefaultException(e);
             }
         };
-        return infoCallable;
     }
 
     public Collection<CountryChannelTotal> parse(List<YtChannelAbout> channelAbouts) {

@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class AbstractPageResolver {
     protected static final String UNDEFINED_STRING_VAL = "UNDEFINED";
-    protected static final Long UNDEFINED_LONG_VAL = -1L;
+    protected static final Long UNDEFINED_LONG_VAL = 0L;
     protected static final ValueObject<String> UNDEFINED_STRING_VO = new ValueObject<>(UNDEFINED_STRING_VAL);
     protected static final ValueObject<Long> UNDEFINED_LONG_VO = new ValueObject<>(UNDEFINED_LONG_VAL);
 
