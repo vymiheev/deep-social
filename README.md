@@ -28,5 +28,7 @@ https://www.youtube.com/channel/UCxSv7WIOXbyDAvw2US1LSlg/about
 
 Для Запуска
 cd youtube
+
 gradle run
+
 список ИД ютуб каналов находится в files/yt-ch.txt
