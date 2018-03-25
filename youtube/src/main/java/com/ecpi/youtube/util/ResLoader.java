@@ -12,11 +12,6 @@ import java.util.List;
 public class ResLoader {
     private static final Logger logger = Logger.getLogger(ResLoader.class);
 
-    public static List<String> readFirst(int n) {
-        //todo
-        return null;
-    }
-
     public static List<YtChannelAbout> buildChannels(String txt) {
         List<String> channelIds = readAll(txt);
         List<YtChannelAbout> channelAbouts = new ArrayList<>();

@@ -1,4 +1,4 @@
-package com.ecpi.youtube;
+package com.ecpi.youtube.ex;
 
 public class YoutubeDefaultException extends Exception {
     public YoutubeDefaultException() {
